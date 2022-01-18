@@ -10,10 +10,13 @@ import { HttpClientService } from '../@core/data/adapter/http-client.service';
 import { CurrentLocationAdapter } from '../@core/data/web-repository/current-location.adapter';
 import { CurrentLocationRepository } from '../@core/repository/current-location.repository';
 import { TemperatureConverterPipe } from '../@core/pipes/temperature-converter.pipe';
+import { ForecastRepository } from '../@core/repository/forecast.repository';
+import { ForecastAdapter } from '../@core/data/web-repository/forecast.adapter';
 
 const DATA_SERVICE: Provider[] = [
   HttpClientService,
-  { provide: CurrentLocationRepository, useClass: CurrentLocationAdapter }
+  { provide: CurrentLocationRepository, useClass: CurrentLocationAdapter },
+  { provide: ForecastRepository, useClass: ForecastAdapter }
 ]
 @NgModule({
   declarations: [
