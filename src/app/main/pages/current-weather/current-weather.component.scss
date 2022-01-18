@@ -1,0 +1,32 @@
+.card {
+  color: white;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(179, 39, 154, 1) 50%,
+    rgba(124, 69, 252, 1) 100%
+  );
+}
+
+.location {
+  text-align: left;
+}
+
+.temperature {
+  text-align: left;
+  font-size: 5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}

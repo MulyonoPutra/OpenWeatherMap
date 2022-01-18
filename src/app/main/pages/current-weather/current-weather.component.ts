@@ -11,7 +11,6 @@ import { environment } from 'src/environments/environment';
 })
 export class CurrentWeatherComponent implements OnInit {
 
-
   latitude!: number;
   longitude!: number;
   apiKey = environment.apiKey;
@@ -19,6 +18,8 @@ export class CurrentWeatherComponent implements OnInit {
   mainWeather!: string;
   description!: string;
   temperature!: number;
+  celcius: any;
+  icon!: string;
 
 
   constructor(
@@ -47,6 +48,8 @@ export class CurrentWeatherComponent implements OnInit {
         this.latitude = response.coord.lat;
         this.longitude = response.coord.lon;
         this.temperature = (response.main.temp - 32) * 5.0 / 9.0;
+        this.celcius = this.temperature + '°C';
+        this.icon = response.weather[0].icon;
       });
     });
   }
