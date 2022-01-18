@@ -14,7 +14,7 @@
   <br>
   <div class="w-11/12">
     <mat-accordion *ngFor="let data of forecast; let i = index">
-      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" appRendererHighlight>
         <mat-expansion-panel-header [collapsedHeight]="'70px'" [expandedHeight]="'70px'">
           <mat-panel-title>
             <div class="flex space-x-6 text-color">
@@ -52,6 +52,4 @@
       <div class="mt-3"></div>
     </mat-accordion>
   </div>
-
-
 </div>

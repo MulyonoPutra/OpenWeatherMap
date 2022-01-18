@@ -12,6 +12,7 @@ import { CurrentLocationRepository } from '../@core/repository/current-location.
 import { TemperatureConverterPipe } from '../@core/pipes/temperature-converter.pipe';
 import { ForecastRepository } from '../@core/repository/forecast.repository';
 import { ForecastAdapter } from '../@core/data/web-repository/forecast.adapter';
+import { RendererHighlightDirective } from '../@core/directives/renderer-highlight.directive';
 
 const DATA_SERVICE: Provider[] = [
   HttpClientService,
@@ -22,7 +23,7 @@ const DATA_SERVICE: Provider[] = [
   declarations: [
     MainComponent,
     CurrentWeatherComponent,
-    WeatherForecastComponent, TemperatureConverterPipe
+    WeatherForecastComponent, TemperatureConverterPipe, RendererHighlightDirective
   ],
   imports: [CommonModule, MainRoutingModule, MaterialModule, FormsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
