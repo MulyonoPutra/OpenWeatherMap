@@ -25,6 +25,6 @@ export class ForecastAdapter implements ForecastRepository {
 
     return this.http
       .get(apiurl)
-      .pipe(delay(2000), catchError(this.apiService.handleError));
+      .pipe(delay(500), catchError(this.apiService.handleError));
   }
 }
