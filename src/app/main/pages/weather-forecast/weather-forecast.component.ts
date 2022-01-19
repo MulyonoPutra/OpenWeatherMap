@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ForecastParams } from 'src/app/@core/domain/dto/forecast.dto';
 import { List } from 'src/app/@core/domain/entity/forecast.entity';
 import { GetForecastUsecase } from 'src/app/@core/usecase/forecast.usecase';
+import { ErrorService } from 'src/app/@core/utils/services/error.service';
 import { GetLocationService } from 'src/app/@core/utils/services/get-location.service';
 import { environment } from 'src/environments/environment';
 
@@ -25,7 +26,8 @@ export class WeatherForecastComponent implements OnInit {
 
   constructor(
     protected getLocationService: GetLocationService,
-    protected forecastUseCase: GetForecastUsecase
+    protected forecastUseCase: GetForecastUsecase,
+    protected errorMessage: ErrorService
   ) {}
 
   ngOnInit() {
@@ -33,13 +35,15 @@ export class WeatherForecastComponent implements OnInit {
   }
 
   findAllForecast() {
-    this.getLocationService.findLatitudeAndLongitude().then((response: any) => {
+    this.getLocationService.findLatitudeAndLongitude().then(
+      response => {
       let params: ForecastParams = {
         lat: response.lat,
         long: response.long,
         apiKey: this.apiKey,
       };
-      this.forecastUseCase.execute(params).subscribe((response) => {
+      this.forecastUseCase.execute(params).subscribe(
+        response => {
         this.locationName = response.city.name;
         this.forecast = response.list;
 
@@ -48,6 +52,8 @@ export class WeatherForecastComponent implements OnInit {
           this.date = element.dt_txt;
           this.icon = element.weather[0].icon;
         });
+      }, error => {
+        this.errorMessage.getMessage(error);
       });
     });
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentLocationParams } from 'src/app/@core/domain/dto/current-location.dto';
 import { GetCurrentLocationUsecase } from 'src/app/@core/usecase/current-location.usecase';
+import { ErrorService } from 'src/app/@core/utils/services/error.service';
 import { GetLocationService } from 'src/app/@core/utils/services/get-location.service';
 import { environment } from 'src/environments/environment';
 
@@ -24,7 +25,8 @@ export class CurrentWeatherComponent implements OnInit {
 
   constructor(
     protected getCurrentLocationUsecase: GetCurrentLocationUsecase,
-    protected getLocationService: GetLocationService
+    protected getLocationService: GetLocationService,
+    protected errorMessage: ErrorService
   ) { }
 
   ngOnInit(): void {
@@ -32,13 +34,15 @@ export class CurrentWeatherComponent implements OnInit {
   }
 
   getCurrentLocation() {
-    this.getLocationService.findLatitudeAndLongitude().then((response) => {
+    this.getLocationService.findLatitudeAndLongitude().then(
+      response => {
       let params: CurrentLocationParams = {
         lat: response.lat,
         long: response.long,
         apiKey: this.apiKey,
       }
-      this.getCurrentLocationUsecase.execute(params).subscribe((response) => {
+      this.getCurrentLocationUsecase.execute(params).subscribe(
+        response => {
         this.nameLocation = response.name;
         this.mainWeather = response.weather[0].main;
         this.description = response.weather[0].description;
@@ -47,7 +51,11 @@ export class CurrentWeatherComponent implements OnInit {
         this.temperature = (response.main.temp - 32) * 5.0 / 9.0;
         this.celcius = this.temperature + '°C';
         this.icon = response.weather[0].icon;
+      }, error => {
+        this.errorMessage.getMessage(error);
       });
+    }, error => {
+      this.errorMessage.getMessage(error);
     });
   }
 

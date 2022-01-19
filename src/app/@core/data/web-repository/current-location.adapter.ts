@@ -26,5 +26,5 @@ export class CurrentLocationAdapter implements CurrentLocationRepository {
       catchError(this.apiService.handleError)
     );
   }
-  
+
 }
