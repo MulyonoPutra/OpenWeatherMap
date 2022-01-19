@@ -2,7 +2,6 @@ import {
   Directive,
   ElementRef,
   HostListener,
-  OnInit,
   Renderer2,
 } from '@angular/core';
 
