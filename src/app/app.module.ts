@@ -11,16 +11,18 @@ import { FormsModule } from '@angular/forms';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
-  declarations: [
-    AppComponent, ToolbarComponent,
-   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule, HttpClientModule, MainModule, MaterialModule, FormsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+	declarations: [AppComponent, ToolbarComponent],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		HttpClientModule,
+		MainModule,
+		MaterialModule,
+		FormsModule,
+	],
+	providers: [],
+	bootstrap: [AppComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

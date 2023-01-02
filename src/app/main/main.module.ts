@@ -10,17 +10,16 @@ import { RendererHighlightDirective } from '../@core/utils/directives/renderer-h
 import { TemperatureConverterPipe } from '../@core/utils/pipes/temperature-converter.pipe';
 import { DATA_SERVICE } from '../@core/utils/providers/main.providers';
 
-
 @NgModule({
-  declarations: [
-    MainComponent,
-    CurrentWeatherComponent,
-    WeatherForecastComponent,
-    TemperatureConverterPipe,
-    RendererHighlightDirective,
-  ],
-  imports: [CommonModule, MainRoutingModule, MaterialModule, FormsModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [...DATA_SERVICE],
+	declarations: [
+		MainComponent,
+		CurrentWeatherComponent,
+		WeatherForecastComponent,
+		TemperatureConverterPipe,
+		RendererHighlightDirective,
+	],
+	imports: [CommonModule, MainRoutingModule, MaterialModule, FormsModule],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
+	providers: [...DATA_SERVICE],
 })
 export class MainModule {}

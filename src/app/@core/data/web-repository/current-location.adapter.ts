@@ -7,24 +7,21 @@ import { CurrentLocationRepository } from '../../repository/current-location.rep
 import { HttpClientService } from '../adapter/http-client.service';
 
 @Injectable({
-  providedIn: 'root',
+	providedIn: 'root',
 })
 export class CurrentLocationAdapter implements CurrentLocationRepository {
+	constructor(
+		private http: HttpClient,
+		private apiService: HttpClientService
+	) {}
 
-  constructor(
-    private http: HttpClient,
-    private apiService: HttpClientService
-  ) {}
+	findCurrentLocation(params: CurrentLocationParams): Observable<any> {
+		let apiurl = `${environment.current}lat=${params.lat}&lon=${params.long}&appid=${params.apiKey}`;
 
-  findCurrentLocation(params: CurrentLocationParams): Observable<any> {
-
-    let apiurl = `${environment.current}lat=${params.lat}&lon=${params.long}&appid=${params.apiKey}`;
-
-    return this.http.get(apiurl).pipe(
-      delay(2000),
-      tap((response) => {}),
-      catchError(this.apiService.handleError)
-    );
-  }
-
+		return this.http.get(apiurl).pipe(
+			delay(2000),
+			tap((response) => {}),
+			catchError(this.apiService.handleError)
+		);
+	}
 }

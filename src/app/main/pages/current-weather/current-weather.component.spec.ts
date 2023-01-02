@@ -6,23 +6,22 @@ import { DebugElement } from '@angular/core';
 import { CurrentWeatherComponent } from './current-weather.component';
 
 describe('CurrentWeatherComponent', () => {
-  let component: CurrentWeatherComponent;
-  let fixture: ComponentFixture<CurrentWeatherComponent>;
+	let component: CurrentWeatherComponent;
+	let fixture: ComponentFixture<CurrentWeatherComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CurrentWeatherComponent ]
-    })
-    .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [CurrentWeatherComponent],
+		}).compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CurrentWeatherComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(CurrentWeatherComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

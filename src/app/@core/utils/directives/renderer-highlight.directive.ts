@@ -1,18 +1,12 @@
-import {
-  Directive,
-  ElementRef,
-  HostListener,
-  Renderer2,
-} from '@angular/core';
+import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appRendererHighlight]'
+	selector: '[appRendererHighlight]',
 })
 export class RendererHighlightDirective {
+	constructor(private element: ElementRef, private renderer: Renderer2) {}
 
-  constructor(private element: ElementRef, private renderer: Renderer2) { }
-
-  linearGradient = `linear-gradient(90deg,
+	linearGradient = `linear-gradient(90deg,
                     rgba(70, 58, 180, 0.9755252442773985) 0%,
                     rgba(166, 54, 180, 1) 14%,
                     rgba(93, 53, 180, 1) 22%,
@@ -22,11 +16,19 @@ export class RendererHighlightDirective {
                     rgba(170, 39, 179, 1) 80%,
                     rgba(69, 79, 252, 1) 100%`;
 
-  @HostListener('mouseenter') onmouseover(event: Event) {
-    this.renderer.setStyle(this.element.nativeElement, 'background', this.linearGradient);
-  }
+	@HostListener('mouseenter') onmouseover(event: Event) {
+		this.renderer.setStyle(
+			this.element.nativeElement,
+			'background',
+			this.linearGradient
+		);
+	}
 
-  @HostListener('mouseleave') onmouseleave(event: Event) {
-    this.renderer.setStyle(this.element.nativeElement, 'background', this.linearGradient);
-  }
+	@HostListener('mouseleave') onmouseleave(event: Event) {
+		this.renderer.setStyle(
+			this.element.nativeElement,
+			'background',
+			this.linearGradient
+		);
+	}
 }
