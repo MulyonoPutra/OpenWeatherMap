@@ -15,7 +15,7 @@ export class SharedService {
 		this.geoLocation = data;
 	}
 
-	getGeoLocation(): any {
+	getGeoLocation(): GeoLocation {
 		return this.geoLocation;
 	}
 }

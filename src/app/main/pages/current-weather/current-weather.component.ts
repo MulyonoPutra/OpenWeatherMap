@@ -20,7 +20,7 @@ export class CurrentWeatherComponent implements OnInit {
 	latitude!: number;
 	longitude!: number;
 	temperature!: number;
-	celcius: any;
+	celcius!: string;
 	apiKey = environment.apiKey;
 
 	constructor(

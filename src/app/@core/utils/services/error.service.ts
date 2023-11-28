@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
 import { AlertMessageService } from './alert-message.service';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Injectable } from '@angular/core';
 
 @Injectable({
 	providedIn: 'root',

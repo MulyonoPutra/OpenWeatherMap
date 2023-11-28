@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 
@@ -22,10 +23,6 @@ export class HttpClientService {
 	}
 
 	getRequest(apiUrl: string, params: any) {
-		const headers = new HttpHeaders({
-			'Content-type': 'application/json',
-		});
-
 		return this.http.get<any>(apiUrl, { params }).pipe(
 			tap((res) => res.data),
 			catchError(this.handleError)
@@ -33,10 +30,6 @@ export class HttpClientService {
 	}
 
 	putRequest(apiUrl: string, body: any) {
-		const headers = new HttpHeaders({
-			'Content-type': 'application/json',
-		});
-
 		return this.http.put<any>(apiUrl, body).pipe(
 			tap((res) => res.data),
 			catchError(this.handleError)
