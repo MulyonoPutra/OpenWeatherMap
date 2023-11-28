@@ -9,9 +9,10 @@ import { MainModule } from './main/main.module';
 import { MaterialModule } from './shared/material.module';
 import { FormsModule } from '@angular/forms';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { PageNotFoundComponent } from './main/pages/page-not-found/page-not-found.component';
 
 @NgModule({
-	declarations: [AppComponent, ToolbarComponent],
+	declarations: [AppComponent, ToolbarComponent, PageNotFoundComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
