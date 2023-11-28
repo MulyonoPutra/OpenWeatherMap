@@ -1,23 +1,21 @@
 import { Injectable } from '@angular/core';
 
 export interface GeoLocation {
-  lat: number;
-  long: number;
+	lat: number;
+	long: number;
 }
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class SharedService {
+	private geoLocation!: GeoLocation;
 
-  private geoLocation!: GeoLocation;
+	setGeoLocation(data: GeoLocation): void {
+		this.geoLocation = data;
+	}
 
-  setGeoLocation(data: GeoLocation): void {
-    this.geoLocation = data;
-  }
-
-  getGeoLocation(): any {
-    return this.geoLocation;
-  }
-
+	getGeoLocation(): any {
+		return this.geoLocation;
+	}
 }

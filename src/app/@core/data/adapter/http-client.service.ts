@@ -44,7 +44,6 @@ export class HttpClientService {
 	}
 
 	deleteRequest(apiUrl: string, params: any) {
-
 		return this.http.delete<any>(apiUrl + params).pipe(
 			tap((res) => res),
 			catchError(this.handleError)

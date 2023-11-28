@@ -27,7 +27,7 @@ export class CurrentWeatherComponent implements OnInit {
 		protected getCurrentLocationUsecase: GetCurrentLocationUsecase,
 		protected getLocationService: GetLocationService,
 		protected errorMessage: ErrorService,
-    protected sharedService: SharedService
+		protected sharedService: SharedService
 	) {}
 
 	ngOnInit(): void {
@@ -37,7 +37,7 @@ export class CurrentWeatherComponent implements OnInit {
 	getCurrentLocation() {
 		this.getLocationService.findLatitudeAndLongitude().then(
 			(response) => {
-        this.sharedService.setGeoLocation(response)
+				this.sharedService.setGeoLocation(response);
 				const params: CurrentLocationParams = {
 					lat: response.lat,
 					long: response.long,

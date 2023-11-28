@@ -10,15 +10,15 @@ import Swal from 'sweetalert2';
 	styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  constructor(private router: Router, private sharedService: SharedService) {}
+	constructor(private router: Router, private sharedService: SharedService) {}
 
 	navigate(route: string) {
 		if (route === 'current') {
 			this.router.navigate(['/current']);
-      const geoLocation: GeoLocation = this.sharedService.getGeoLocation();
-      if(!geoLocation) {
-        Swal.fire('warning', 'Please allow location access in your computer!', 'warning');
-      }
+			const geoLocation: GeoLocation = this.sharedService.getGeoLocation();
+			if (!geoLocation) {
+				Swal.fire('warning', 'Please allow location access in your computer!', 'warning');
+			}
 		} else if (route === 'forecast') {
 			this.router.navigate(['/forecast']);
 		}
