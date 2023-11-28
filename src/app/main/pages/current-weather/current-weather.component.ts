@@ -46,8 +46,7 @@ export class CurrentWeatherComponent implements OnInit {
 						this.description = response.weather[0].description;
 						this.latitude = response.coord.lat;
 						this.longitude = response.coord.lon;
-						this.temperature =
-							((response.main.temp - 32) * 5.0) / 9.0;
+						this.temperature = ((response.main.temp - 32) * 5.0) / 9.0;
 						this.celcius = this.temperature + '°C';
 						this.icon = response.weather[0].icon;
 					},
