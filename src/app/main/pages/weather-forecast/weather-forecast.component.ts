@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ForecastParams } from 'src/app/@core/domain/dto/forecast.dto';
-import { List } from 'src/app/@core/domain/entity/forecast.entity';
-import { GetForecastUsecase } from 'src/app/@core/usecase/forecast.usecase';
+
 import { ErrorService } from 'src/app/@core/utils/services/error.service';
+import { ForecastParams } from 'src/app/@core/domain/dto/forecast.dto';
+import { GetForecastUsecase } from 'src/app/@core/usecase/forecast.usecase';
 import { GetLocationService } from 'src/app/@core/utils/services/get-location.service';
+import { List } from 'src/app/@core/domain/entity/forecast.entity';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -35,7 +36,7 @@ export class WeatherForecastComponent implements OnInit {
 
 	findAllForecast() {
 		this.getLocationService.findLatitudeAndLongitude().then((response) => {
-			let params: ForecastParams = {
+			const params: ForecastParams = {
 				lat: response.lat,
 				long: response.long,
 				apiKey: this.apiKey,

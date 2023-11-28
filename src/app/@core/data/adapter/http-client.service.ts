@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
+
+import { Injectable } from '@angular/core';
+import { throwError } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root',
@@ -43,9 +44,6 @@ export class HttpClientService {
 	}
 
 	deleteRequest(apiUrl: string, params: any) {
-		const headers = new HttpHeaders({
-			'Content-type': 'application/json',
-		});
 
 		return this.http.delete<any>(apiUrl + params).pipe(
 			tap((res) => res),

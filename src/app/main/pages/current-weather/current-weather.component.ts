@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { CurrentLocationParams } from 'src/app/@core/domain/dto/current-location.dto';
-import { GetCurrentLocationUsecase } from 'src/app/@core/usecase/current-location.usecase';
 import { ErrorService } from 'src/app/@core/utils/services/error.service';
+import { GetCurrentLocationUsecase } from 'src/app/@core/usecase/current-location.usecase';
 import { GetLocationService } from 'src/app/@core/utils/services/get-location.service';
 import { environment } from 'src/environments/environment';
 
@@ -34,7 +35,7 @@ export class CurrentWeatherComponent implements OnInit {
 	getCurrentLocation() {
 		this.getLocationService.findLatitudeAndLongitude().then(
 			(response) => {
-				let params: CurrentLocationParams = {
+				const params: CurrentLocationParams = {
 					lat: response.lat,
 					long: response.long,
 					apiKey: this.apiKey,

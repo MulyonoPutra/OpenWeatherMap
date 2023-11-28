@@ -1,77 +1,20 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 8px 0;
-}
+.wrapper {
+  @apply bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200;
 
-p {
-	margin: 0;
-}
+  .justify__center {
+    @apply max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4;
 
-.spacer {
-	flex: 1;
-}
+    .today {
+      @apply flex items-center space-x-3 rtl:space-x-reverse;
 
-.toolbar {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 80px;
-	display: flex;
-	align-items: center;
-	background-color: #6a0dad;
-	color: white;
-	font-weight: 600;
-}
+    }
 
-.toolbar img {
-	margin: 0 16px;
-}
+    .forecast {
+      @apply flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse;
+    }
+  }
 
-.toolbar #toolbar {
-	height: 30px;
-	margin: 0 0px;
-}
-
-.toolbar #youtube-logo {
-	height: 30px;
-	margin: 0 16px;
-}
-
-.toolbar #twitter-logo:hover,
-.toolbar #youtube-logo:hover {
-	opacity: 0.8;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 767px) {
-	.card-container > *:not(.circle-link),
-	.terminal {
-		width: 100%;
-	}
-
-	.card:not(.highlight-card) {
-		height: 16px;
-		margin: 8px 0;
-	}
-
-	.card.highlight-card span {
-		margin-left: 72px;
-	}
-
-	svg#rocket-smoke {
-		right: 120px;
-		transform: rotate(-5deg);
-	}
-}
-
-@media screen and (max-width: 575px) {
-	svg#rocket-smoke {
-		display: none;
-		visibility: hidden;
-	}
+  button {
+    @apply text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-4 py-2 text-center;
+  }
 }

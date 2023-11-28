@@ -16,11 +16,11 @@ export class RendererHighlightDirective {
                     rgba(170, 39, 179, 1) 80%,
                     rgba(69, 79, 252, 1) 100%`;
 
-	@HostListener('mouseenter') onmouseover(event: Event) {
+	@HostListener('mouseenter') onmouseover() {
 		this.renderer.setStyle(this.element.nativeElement, 'background', this.linearGradient);
 	}
 
-	@HostListener('mouseleave') onmouseleave(event: Event) {
+	@HostListener('mouseleave') onmouseleave() {
 		this.renderer.setStyle(this.element.nativeElement, 'background', this.linearGradient);
 	}
 }

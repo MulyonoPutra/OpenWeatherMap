@@ -14,7 +14,7 @@ export class CurrentLocationAdapter implements CurrentLocationRepository {
 	constructor(private http: HttpClient, private apiService: HttpClientService) {}
 
 	findCurrentLocation(params: CurrentLocationParams): Observable<any> {
-		let apiurl = `${environment.current}lat=${params.lat}&lon=${params.long}&appid=${params.apiKey}`;
+		const apiurl = `${environment.current}lat=${params.lat}&lon=${params.long}&appid=${params.apiKey}`;
 
 		return this.http.get(apiurl).pipe(catchError(this.apiService.handleError));
 	}
