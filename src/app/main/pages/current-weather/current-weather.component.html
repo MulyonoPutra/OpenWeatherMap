@@ -1,11 +1,8 @@
 <br />
-<div class="container p-2">
-	<div class="mt-12"></div>
-</div>
 
-<div class="container p-2">
+<div class="container flex mx-auto justify-center md:mt-8 lg:mt-8 mt-6 p-6">
 	<mat-card class="card p-6">
-		<div class="location flex justify-start">
+		<div class="relative location flex justify-start">
 			<div>
 				<div class="flex flex-col space-y-2">
 					<div>
@@ -19,16 +16,15 @@
 						><br />
 					</div>
 				</div>
-				<div class="temperature">
+				<div class="font-bold text-6xl">
 					<span
 						>{{ temperature | temperatureConverter : 'C' }} °C</span
 					>
 				</div>
-				<div>
+				<div class="absolute top-0 right-0 hidden md:block lg:block">
 					<img
 						src="http://openweathermap.org/img/wn/{{ icon }}@2x.png"
-						alt="Icon"
-						class="icon" />
+						alt="Icon" />
 				</div>
 				<div>
 					<span>

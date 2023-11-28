@@ -1,31 +1,17 @@
 .title {
 	text-align: left;
-	font-size: 2rem;
-	color: rgb(0, 0, 0);
-	font-weight: 800;
+  @apply text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-red-600;
 
-	&:hover {
-		color: rgb(131, 58, 180);
-		color: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(179, 39, 154, 1) 50%, rgba(124, 69, 252, 1) 100%);
-	}
 }
 
 .title-small {
 	text-align: left;
 	font-size: 1rem;
-	color: rgb(0, 0, 0);
-	font-weight: bold;
-	&:hover {
-		color: rgb(131, 58, 180);
-		color: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(179, 39, 154, 1) 50%, rgba(124, 69, 252, 1) 100%);
-	}
+  @apply text-sm font-bold text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-red-600;
 }
 
 .text-color {
 	color: antiquewhite !important;
-	&:hover {
-		color: rgb(0, 0, 0) !important;
-	}
 }
 
 .mat-expansion-panel-header.mat-expanded,
