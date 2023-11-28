@@ -1,6 +1,6 @@
 export const environment = {
 	production: false,
-	current: 'http://api.openweathermap.org/data/2.5/weather?',
-	forecast: 'http://api.openweathermap.org/data/2.5/forecast?',
-	apiKey: '61aea816d83dc6c3604805fc5790f007',
+	current: 'https://api.openweathermap.org/data/2.5/weather?',
+	forecast: 'https://api.openweathermap.org/data/2.5/forecast?',
+	apiKey: 'fa2cf05c169e43496a514b13aeac6f3f',
 };

@@ -6,12 +6,7 @@
 
 	&:hover {
 		color: rgb(131, 58, 180);
-		color: linear-gradient(
-			90deg,
-			rgba(131, 58, 180, 1) 0%,
-			rgba(179, 39, 154, 1) 50%,
-			rgba(124, 69, 252, 1) 100%
-		);
+		color: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(179, 39, 154, 1) 50%, rgba(124, 69, 252, 1) 100%);
 	}
 }
 
@@ -22,12 +17,7 @@
 	font-weight: bold;
 	&:hover {
 		color: rgb(131, 58, 180);
-		color: linear-gradient(
-			90deg,
-			rgba(131, 58, 180, 1) 0%,
-			rgba(179, 39, 154, 1) 50%,
-			rgba(124, 69, 252, 1) 100%
-		);
+		color: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(179, 39, 154, 1) 50%, rgba(124, 69, 252, 1) 100%);
 	}
 }
 
@@ -39,26 +29,15 @@
 }
 
 .mat-expansion-panel-header.mat-expanded,
-.mat-expansion-panel-header.mat-expanded:hover
-	.mat-expansion-panel-header.mat-expanded:focus {
+.mat-expansion-panel-header.mat-expanded:hover .mat-expansion-panel-header.mat-expanded:focus {
 	background: rgb(131, 58, 180);
-	background: linear-gradient(
-		90deg,
-		rgba(131, 58, 180, 1) 0%,
-		rgba(179, 39, 110, 1) 50%,
-		rgba(69, 79, 252, 1) 100%
-	);
+	background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(179, 39, 110, 1) 50%, rgba(69, 79, 252, 1) 100%);
 }
 
 .mat-expansion-panel-header {
 	color: antiquewhite;
 	background: rgb(131, 58, 180);
-	background: linear-gradient(
-		90deg,
-		rgba(131, 58, 180, 1) 0%,
-		rgba(179, 39, 154, 1) 50%,
-		rgba(124, 69, 252, 1) 100%
-	);
+	background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(179, 39, 154, 1) 50%, rgba(124, 69, 252, 1) 100%);
 }
 
 .mat-expansion-panel-body {

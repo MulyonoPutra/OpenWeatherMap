@@ -5,8 +5,7 @@ import { PageNotFoundComponent } from './main/pages/page-not-found/page-not-foun
 const routes: Routes = [
 	{
 		path: '',
-		loadChildren: () =>
-			import('./main/main.module').then((m) => m.MainModule),
+		loadChildren: () => import('./main/main.module').then((m) => m.MainModule),
 	},
 	{
 		path: '404',

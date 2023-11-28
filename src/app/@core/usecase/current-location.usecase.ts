@@ -8,9 +8,7 @@ import { CurrentLocationRepository } from '../repository/current-location.reposi
 @Injectable({
 	providedIn: 'root',
 })
-export class GetCurrentLocationUsecase
-	implements UseCase<CurrentLocationParams, CurrentLocation>
-{
+export class GetCurrentLocationUsecase implements UseCase<CurrentLocationParams, CurrentLocation> {
 	constructor(private currentLocationRepository: CurrentLocationRepository) {}
 
 	execute(params: CurrentLocationParams): Observable<CurrentLocation> {

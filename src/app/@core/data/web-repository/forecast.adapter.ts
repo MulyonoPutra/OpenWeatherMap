@@ -10,15 +10,10 @@ import { HttpClientService } from '../adapter/http-client.service';
 	providedIn: 'root',
 })
 export class ForecastAdapter implements ForecastRepository {
-	constructor(
-		private http: HttpClient,
-		private apiService: HttpClientService
-	) {}
+	constructor(private http: HttpClient, private apiService: HttpClientService) {}
 
 	findByGeographicCoordinates(params: ForecastParams): Observable<any> {
 		let url = `${environment.forecast}lat=${params.lat}&lon=${params.long}&appid=${params.apiKey}`;
-		return this.http
-			.get(url)
-			.pipe(delay(500), catchError(this.apiService.handleError));
+		return this.http.get(url).pipe(delay(500), catchError(this.apiService.handleError));
 	}
 }

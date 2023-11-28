@@ -14,11 +14,7 @@ export class ToolbarComponent implements OnInit {
 	navigate(route: string) {
 		if (route === 'current') {
 			this.router.navigate(['/current']);
-			Swal.fire(
-				'warning',
-				'Please allow location access in your computer!',
-				'warning'
-			);
+			Swal.fire('warning', 'Please allow location access in your computer!', 'warning');
 		} else if (route === 'forecast') {
 			this.router.navigate(['/forecast']);
 		}
